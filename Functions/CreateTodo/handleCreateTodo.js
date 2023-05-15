@@ -10,20 +10,27 @@ const handleCreateTodo = (taskArray, todoInputValue) => {
   // set the text for the created items
   createTodoItem.textContent = `${todoInputValue}`;
   createDeleteBtn.textContent = "delete";
-  // add the li to the ul
-  todoListContainer.appendChild(createTodoItem);
-  createTodoItem.appendChild(createDeleteBtn);
 
+  // create the new object to be added to the array
   const newTodo = {
     id: uuid(),
     text: todoInputValue,
   };
 
+  // add a id attribute on the dynamic created deleteBtn
+  createDeleteBtn.setAttribute("id", `${newTodo.id}`);
+
+  // add to the ul
+  todoListContainer.appendChild(createTodoItem);
+  createTodoItem.appendChild(createDeleteBtn);
+
+  // console.log(`deleteBtn:`, createDeleteBtn);
+
   // create a new array with the existing taskArray and the newTodo object
   const newTaskArray = [...taskArray, newTodo];
 
   console.log(`taskArray`, newTaskArray);
-  return newTaskArray;
+  return newTaskArray; // return the updated array
 };
 
 export default handleCreateTodo;
