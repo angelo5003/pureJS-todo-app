@@ -27,8 +27,8 @@ const handleAdd = (e) => {
   // function for adding todo's
   taskArray = handleCreateTodo(taskArray, todoInputValue); // assign the returned value of handleCreateTodo to the taskArray variable and than call the handleShowTasks to show the updated list to the DOM
 
-  // // Convert the array into a JSON string and store it in localStorage
-  // localStorage.setItem("todo", JSON.stringify(taskArray));
+  // Convert the array into a JSON string and store it in localStorage
+  localStorage.setItem("todo", JSON.stringify(taskArray));
 
   // prevent the form from refreshing the browser everytime we add a new todo
   e.preventDefault();

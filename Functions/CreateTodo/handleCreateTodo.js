@@ -23,7 +23,9 @@ const handleCreateTodo = (taskArray, todoInputValue) => {
 
   // add a id attribute on the dynamic created deleteBtn
   createDeleteBtn.setAttribute("buttonId", `${newTodo.id}`);
-  createDeleteBtn.addEventListener(`click`, () => handleDelete(newTodo.id));
+  createDeleteBtn.addEventListener(`click`, () =>
+    handleDelete(newTodo.id, taskArray)
+  );
 
   // add to the ul
   todoListContainer.appendChild(createTodoItem);
@@ -31,11 +33,6 @@ const handleCreateTodo = (taskArray, todoInputValue) => {
 
   // create a new array called newTaskArray with the copied existing taskArray, and add the newTodo object to it
   const newTaskArray = [...taskArray, newTodo];
-
-  // Convert the array into a JSON string and store it in localStorage
-  localStorage.setItem("todo", JSON.stringify(newTaskArray));
-
-  console.log(`deleteBtn:`, createDeleteBtn);
 
   console.log(`taskArray`, newTaskArray);
   return newTaskArray; // return the updated array
