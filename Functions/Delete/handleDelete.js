@@ -1,5 +1,5 @@
-const handleDelete = () => {
-  console.log(`hello world from the delete func`);
+const handleDelete = (id) => {
+  console.log(`hello from the handleDelete function with buttonId:`, id);
 };
 
 export default handleDelete;

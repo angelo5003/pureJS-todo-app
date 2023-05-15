@@ -1,4 +1,5 @@
 import { v4 as uuid } from "uuid";
+import handleDelete from "../Delete/handleDelete";
 
 const handleCreateTodo = (taskArray, todoInputValue) => {
   // target the parent of the li (ul)
@@ -17,17 +18,24 @@ const handleCreateTodo = (taskArray, todoInputValue) => {
     text: todoInputValue,
   };
 
+  // add a id attribute on the dynamic created li
+  createTodoItem.setAttribute("id", `${newTodo.id}`);
+
   // add a id attribute on the dynamic created deleteBtn
-  createDeleteBtn.setAttribute("id", `${newTodo.id}`);
+  createDeleteBtn.setAttribute("buttonId", `${newTodo.id}`);
+  createDeleteBtn.addEventListener(`click`, () => handleDelete(newTodo.id));
 
   // add to the ul
   todoListContainer.appendChild(createTodoItem);
   createTodoItem.appendChild(createDeleteBtn);
 
-  // console.log(`deleteBtn:`, createDeleteBtn);
-
-  // create a new array with the existing taskArray and the newTodo object
+  // create a new array called newTaskArray with the copied existing taskArray, and add the newTodo object to it
   const newTaskArray = [...taskArray, newTodo];
+
+  // Convert the array into a JSON string and store it in localStorage
+  localStorage.setItem("todo", JSON.stringify(newTaskArray));
+
+  console.log(`deleteBtn:`, createDeleteBtn);
 
   console.log(`taskArray`, newTaskArray);
   return newTaskArray; // return the updated array
