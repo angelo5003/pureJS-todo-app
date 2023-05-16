@@ -8,7 +8,7 @@ const addTodoBtn = document.getElementById("add_todo_btn");
 const todoInput = document.getElementById("todo_input_field");
 
 // get the form
-const resetTodoInput = document.getElementById("todo_form"); // target the form
+const resetTodoInput = document.getElementById("todo_form");
 // default value of the input
 let todoInputValue = "";
 
