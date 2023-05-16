@@ -2,7 +2,7 @@ import handleShowTasks from "../Show/handleShowTasks";
 
 //!function for deleting items from the array
 const handleDelete = (id, taskArray) => {
-  console.log(`hello from the handleDelete function with buttonId:`, id);
+  // variable where we store the filtered array in
   let filteredArray = taskArray.filter((task) => task.id !== id);
 
   // Update localStorage with filteredArray. Turn the new filteredArray to a string and add to localStorage

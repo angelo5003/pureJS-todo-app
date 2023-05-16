@@ -60,7 +60,6 @@ button:focus-visible {
 }
 
 .success {
-  /* background-color: red; */
   text-decoration: 5px solid red line-through;
   display: flex;
   justify-content: space-evenly;

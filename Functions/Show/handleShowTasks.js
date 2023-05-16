@@ -32,7 +32,7 @@ const handleShowTasks = (taskArray) => {
     createTask.setAttribute("data-li-id", `${task.id}`);
     createTask.classList.add("done");
 
-    // add id attribute to the eletBtn to be shown on the DOM
+    // add id attribute to the deletBtn to be shown on the DOM
     createDeleteBtn.setAttribute("buttonId", `${task.id}`);
     createDeleteBtn.addEventListener(`click`, () =>
       handleDelete(task.id, taskArray)

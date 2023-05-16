@@ -31,7 +31,6 @@ const handleCreateTodo = (taskArray, todoInputValue) => {
 
   //! add attributes to the elements
   // add a id attribute on the li
-  // createTodoItem.setAttribute("id", `${newTodo.id}`);
   createTodoItem.setAttribute("data-li-id", `${newTodo.id}`);
   createTodoItem.classList.add("done");
 
